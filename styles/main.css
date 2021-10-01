@@ -1,0 +1,535 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto';
+  font-size: 1em;
+  background: #FFFFFF;
+  color: #242424;
+  position: relative;
+  overflow: hidden;
+}
+
+p {
+  font-size: clamp(0.7rem, 2.5vw, 1rem);
+  letter-spacing: .75px;
+  font-weight: 400;
+  line-height: clamp(19.12px, 4vw, 27px);
+}
+
+span, a {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/**/
+header {
+  position: absolute;
+  width: 100%;
+  padding: 3.33em 1.5em 0;
+  z-index: 9;
+}
+
+header .nav-container .nav-logo {
+  z-index: 1;
+}
+
+header .nav-container .nav-logo .logo-wrap {
+  line-height: 0;
+}
+
+header .nav-container .nav-logo .logo-wrap svg path {
+  fill: #FFFFFF;
+}
+
+header .nav-container .nav-toggler {
+  z-index: 1;
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+  padding-top: 3.33em;
+}
+
+header .nav-container .nav-toggler .toggler {
+  display: block;
+  padding: 0;
+  max-width: 28px;
+  max-height: 28px;
+  line-height: 0;
+}
+
+header .nav-container .nav-toggler .toggler svg {
+  display: block;
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+header .nav-container .nav-toggler .toggler svg rect {
+  fill: #FFFFFF;
+}
+
+header .nav-container .nav-toggler .toggler svg .rect-1 {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+header .nav-container .nav-toggler .toggler svg .rect-2 {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+header .nav-container .nav-toggler .toggler svg .rect-1, header .nav-container .nav-toggler .toggler svg .rect-2, header .nav-container .nav-toggler .toggler svg .rect-3 {
+  position: absolute;
+  fill: #FFFFFF;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+header .nav-container .nav-toggler .toggler.toggled svg {
+  -webkit-transform: rotateZ(-180deg);
+          transform: rotateZ(-180deg);
+}
+
+header .nav-container .nav-toggler .toggler.toggled svg .rect-1 {
+  -webkit-transform: rotateZ(45deg) translate(16%, -99%);
+          transform: rotateZ(45deg) translate(16%, -99%);
+}
+
+header .nav-container .nav-toggler .toggler.toggled svg .rect-2 {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+header .nav-container .nav-toggler .toggler.toggled svg .rect-3 {
+  -webkit-transform: rotateZ(-45deg) translate(-44%, 69%);
+          transform: rotateZ(-45deg) translate(-44%, 69%);
+}
+
+header .nav-container .nav-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
+}
+
+header .nav-container .nav-menu .menu {
+  position: absolute;
+  -webkit-backdrop-filter: blur(15px) brightness(30%) saturate(0.4);
+          backdrop-filter: blur(15px) brightness(30%) saturate(0.4);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.58, 0.1, 0.56, 0.76);
+  transition: -webkit-transform 0.5s cubic-bezier(0.58, 0.1, 0.56, 0.76);
+  transition: transform 0.5s cubic-bezier(0.58, 0.1, 0.56, 0.76);
+  transition: transform 0.5s cubic-bezier(0.58, 0.1, 0.56, 0.76), -webkit-transform 0.5s cubic-bezier(0.58, 0.1, 0.56, 0.76);
+}
+
+header .nav-container .nav-menu .menu .item .link {
+  position: relative;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: .75px;
+  display: block;
+  padding: .75em 1.5em;
+  font-size: 1rem;
+  color: #FFFFFF;
+  -webkit-transition: color .3s ease, padding .3s ease, -webkit-transform .3s ease;
+  transition: color .3s ease, padding .3s ease, -webkit-transform .3s ease;
+  transition: color .3s ease, padding .3s ease, transform .3s ease;
+  transition: color .3s ease, padding .3s ease, transform .3s ease, -webkit-transform .3s ease;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+header .nav-container .nav-menu .menu .item .link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: .75em;
+  height: 5px;
+  background: #7399FA;
+  -webkit-transform: translateY(-50%) translateX(-100%);
+          transform: translateY(-50%) translateX(-100%);
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+header .nav-container .nav-menu .menu .item:hover .link {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+header .nav-container .nav-menu .menu .item:hover .link::before {
+  -webkit-transform: translateY(-50%) translateX(0);
+          transform: translateY(-50%) translateX(0);
+}
+
+header .nav-container .nav-menu .menu .item.main {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  padding: 6.66em 2em 2.5em;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  margin: 0 0 1em;
+}
+
+header .nav-container .nav-menu .menu .item.main .item-content .title-2 {
+  font-weight: 800;
+  color: #7399FA;
+}
+
+header .nav-container .nav-menu .menu .item.main .item-content p {
+  margin-top: 1em;
+  font-weight: 500;
+  color: white;
+}
+
+header .nav-container .nav-menu .menu .item.main .btn {
+  margin-top: 1.5em;
+}
+
+header .nav-container .nav-menu.toggled {
+  width: 65%;
+}
+
+.btn {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 19px 48px;
+  display: inline-block;
+  border-radius: 8px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn.primary, .btn.default {
+  -webkit-transition: background .3s ease;
+  transition: background .3s ease;
+}
+
+.btn.primary {
+  background: #2104D8;
+  color: #FFFFFF;
+}
+
+.btn.default {
+  background: #242424;
+  color: #FFFFFF;
+}
+
+.btn:hover.primary, .btn:hover.default {
+  -webkit-transition: unset;
+  transition: unset;
+}
+
+.btn:hover.primary {
+  background: #1903a6;
+}
+
+.btn:hover.default {
+  background: #313131;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.title-1 {
+  font-size: clamp(2.22rem, 8vw, 3.55rem);
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.title-2 {
+  font-size: 2rem;
+  position: relative;
+  letter-spacing: .75px;
+  line-height: 1.1;
+}
+
+.container {
+  padding: 0 1.5em;
+  max-width: 1248px;
+  margin: auto;
+}
+
+.fluid {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.fluid.height {
+  width: auto;
+  height: 100%;
+}
+
+.block {
+  display: block;
+}
+
+.accent {
+  color: #7399FA;
+}
+
+.main-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 568px;
+  height: 100vh;
+  background: #242424;
+  color: #FFFFFF;
+  text-align: center;
+  z-index: 1;
+}
+
+.main-banner::after, .main-banner::before {
+  content: '';
+  position: absolute;
+}
+
+.main-banner::after {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(185px) brightness(70%) saturate(0.7);
+          backdrop-filter: blur(185px) brightness(70%) saturate(0.7);
+}
+
+.main-banner::before {
+  width: 421px;
+  height: 421px;
+  background: #2104D8;
+  border-radius: 50%;
+  left: -100px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 0;
+}
+
+.main-banner .banner-content {
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main-banner .banner-content .content {
+  height: 1 0 65.21%;
+  max-height: 65.21%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-banner .banner-content .content p {
+  color: #B0B0B0;
+  padding: 2.5em 0 2em;
+  max-width: 75%;
+  margin: auto;
+}
+
+.main-banner .banner-content .dashboard-snapshot {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  max-height: 417px;
+  z-index: 3;
+  padding: 0 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 3% 1.5em 0;
+  }
+  header .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .nav-container .nav-toggler {
+    right: 1.5em;
+    padding-top: 4.22em;
+    display: none;
+  }
+  header .nav-container .nav-menu {
+    width: auto;
+    position: relative;
+    -webkit-transform: unset;
+            transform: unset;
+    margin: unset;
+  }
+  header .nav-container .nav-menu .menu {
+    position: relative;
+    background: unset;
+    padding: unset;
+    -webkit-transform: unset;
+            transform: unset;
+    -webkit-transition: unset;
+    transition: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: unset;
+    gap: .75em;
+    height: unset;
+    -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
+  }
+  header .nav-container .nav-menu .menu .item .link {
+    padding: 0 .5em;
+    color: #FFFFFF;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+  }
+  header .nav-container .nav-menu .menu .item .link::before {
+    -webkit-transform: unset;
+            transform: unset;
+    content: unset;
+  }
+  header .nav-container .nav-menu .menu .item:hover .link {
+    -webkit-transition: unset;
+    transition: unset;
+    color: #7399FA;
+    transition: unset;
+    padding: .5em;
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  header .nav-container .nav-menu .menu .item:hover .link::before {
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  header .nav-container .nav-menu .menu .item.main {
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
+    margin: unset;
+    background: none;
+    padding: unset;
+    margin-left: 2em;
+  }
+  header .nav-container .nav-menu .menu .item.main .item-content {
+    display: none;
+  }
+  header .nav-container .nav-menu .menu .item.main .btn {
+    margin-top: 0;
+  }
+  header .nav-container .nav-menu.toggled {
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  .main-banner::before {
+    left: 60px;
+  }
+  .main-banner .banner-content .content {
+    height: 1 0 47.11%;
+    max-height: 47.11%;
+  }
+  .main-banner .banner-content .content p {
+    max-width: 75%;
+  }
+  .main-banner .banner-content .dashboard-snapshot {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 36.75%;
+            flex: 0 0 36.75%;
+    max-height: 36.75%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  header .nav-container {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+  header .nav-container .nav-menu .menu {
+    gap: 3em;
+  }
+  header .nav-container .nav-menu .menu .item.main {
+    margin-left: 6em;
+  }
+  .main-banner::before {
+    left: 17.70%;
+  }
+  .main-banner .banner-content .dashboard-snapshot .fluid {
+    width: auto;
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
