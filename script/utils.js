@@ -1,5 +1,5 @@
 const toggler = document.querySelector('.toggler')
-const menu = document.querySelector('.nav-menu')
+const menu = document.querySelector('.nav-menu .menu')
 
 const toggle = (button, collapsible) => {
   button.addEventListener('click', () => {
