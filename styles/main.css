@@ -517,6 +517,8 @@ header .nav-container .nav-menu.toggled {
   }
   header .nav-container .nav-menu .menu {
     position: relative;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
     background: unset;
     padding: unset;
     -webkit-transform: unset;
