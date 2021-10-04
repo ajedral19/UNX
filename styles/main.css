@@ -516,6 +516,7 @@ header .nav-container .nav-menu .menu.toggled {
     -webkit-transform: unset;
             transform: unset;
     margin: unset;
+    overflow-x: unset;
   }
   header .nav-container .nav-menu .menu {
     position: relative;
